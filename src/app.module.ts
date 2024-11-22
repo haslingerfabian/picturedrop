@@ -18,3 +18,4 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 })
 
 export class AppModule {}
+console.log("test")
