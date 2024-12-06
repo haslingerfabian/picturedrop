@@ -12,6 +12,9 @@ import { Vouchers } from './entities/voucher.entity';
 import { SubmissionItem } from './entities/submissionitem.entity';
 import { SubmissionItemController } from './controllers/submissionItem.controller';
 import { SubmissionItemService } from './services/submissionitem.service';
+import { Workspace } from './entities/workspaces.entity';
+import { WorkspacesController } from './controllers/workspace.controller';
+import { WorkspaceService } from './services/workspaces.service';
 
 @Module({
   imports: [
@@ -22,13 +25,13 @@ import { SubmissionItemService } from './services/submissionitem.service';
       username: 'myuser',
       password: 'mypassword',
       database: 'mydb',
-      entities: [User,Vouchers,SubmissionItem],
+      entities: [User,Vouchers,SubmissionItem, Workspace],
       synchronize: false,
     }),
-     TypeOrmModule.forFeature([User,Vouchers,SubmissionItem]),
+     TypeOrmModule.forFeature([User,Vouchers,SubmissionItem, Workspace]),
   ],
-  controllers: [AppController,  UsersController, VouchersController,SubmissionItemController],
-  providers:[AppService, UsersService, VouchersService,SubmissionItemService]
+  controllers: [AppController,  UsersController, VouchersController,SubmissionItemController, WorkspacesController],
+  providers:[AppService, UsersService, VouchersService,SubmissionItemService, WorkspaceService]
 })
 
 export class AppModule {}
