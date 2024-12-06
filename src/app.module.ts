@@ -9,6 +9,9 @@ import { UsersService } from './services/user.service'
 import { VouchersController } from './controllers/voucher.controller'
 import { VouchersService } from './services/voucher.service'
 import { Vouchers } from './entities/voucher.entity';
+import { SubmissionItem } from './entities/submissionitem.entity';
+import { SubmissionItemController } from './controllers/submissionItem.controller';
+import { SubmissionItemService } from './services/submissionitem.service';
 
 @Module({
   imports: [
@@ -19,13 +22,13 @@ import { Vouchers } from './entities/voucher.entity';
       username: 'myuser',
       password: 'mypassword',
       database: 'mydb',
-      entities: [User,Vouchers],
+      entities: [User,Vouchers,SubmissionItem],
       synchronize: false,
     }),
-     TypeOrmModule.forFeature([User,Vouchers]),
+     TypeOrmModule.forFeature([User,Vouchers,SubmissionItem]),
   ],
-  controllers: [AppController,  UsersController, VouchersController],
-  providers:[AppService, UsersService, VouchersService]
+  controllers: [AppController,  UsersController, VouchersController,SubmissionItemController],
+  providers:[AppService, UsersService, VouchersService,SubmissionItemService]
 })
 
 export class AppModule {}
