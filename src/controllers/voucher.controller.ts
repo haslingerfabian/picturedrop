@@ -14,6 +14,7 @@ export class VouchersController {
     operationId: 'getAllVouchers',
     summary: 'Get all vouchers'
   })
+  @ApiResponse({type: Vouchers})
   @Get()
   async findAll(): Promise<Vouchers[]> {
     return this.voucherService.findAll();

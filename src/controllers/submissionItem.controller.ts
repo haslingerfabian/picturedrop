@@ -15,6 +15,7 @@ export class SubmissionItemController {
     operationId: 'getAllSubmissionItems',
     summary: 'Get all submission items'
   })
+    @ApiResponse({type: SubmissionItem})
   @Get()
   async findAll(): Promise<SubmissionItem[]> {
     return this.submissionitemService.findAll();

@@ -1,110 +1,147 @@
 /* eslint-disable prettier/prettier */
 import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity('Workspaces')
 export class Workspace {
-    @PrimaryGeneratedColumn()
-    Id: number;
 
-    @Column()
-    Name: string;
-
-    @Column()
-    Description: string;
-
-    @Column()
-    DescriptionEn: string;
-
-    @Column()
-    ContactUrl: string;
-
-    @Column()
-    ContactMail: string;
-
-    @Column()
-    ContactPhone: string;
-
-    @Column()
-    FirstName: string;
-
-    @Column()
-    LastName: string;
-
-    @Column()
-    DateOfBirth: Date;
-
-    @Column()
-    AddressLine1: string;
-
-    @Column()
-    AddressLine2: string;
-
-    @Column()
-    PostalCode: string;
-
-    @Column()
-    City: string;
-
-    @Column()
-    CountryId: number;
-
-    @Column()
-    CompanyName: string;
-
-    @Column()
-    CompanyVat: string;
-
-    @Column()
-    CompanyDataProtectionUrl: string;
-
-    @Column()
-    UploadLimit: string;
-
-    @Column()
-    StripeSubscriptionId: string;
-
-    @Column()
-    StripeSessionId: string;
-
-    @Column()
-    SubscriptionStatus: string;
-
-    @Column()
-    SubscriptionEndDate: string;
-
-    @Column()
-    TrialStartOn: string;
-
-    @Column()
-    TrialEndsOn: string;
-
-    @Column()
-    OwnerId: number;
-
-    @Column()
-    FileId: number;
-
-    @Column()
-    DefaultPrizeId: number;
-
-    @Column()
-    HasPassword: boolean;
-
-    @Column()
-    Password: string;
-
-    @Column()
-    Slug: string;
-
-    @Column()
-    CreatedById: number;
-
-    @Column()
-    CreatedOn: string;
-
-    @Column()
-    LastModifiedById: number;
-
-    @Column()
-    LastModifiedOn: string;
+      @ApiProperty({ type: Number })
+      @PrimaryGeneratedColumn()
+      Id: number;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      Name: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      Description: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      DescriptionEn: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      ContactUrl: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      ContactMail: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      ContactPhone: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      FirstName: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      LastName: string;
+    
+      @ApiProperty({ type: Date })
+      @Column()
+      DateOfBirth: Date;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      AddressLine1: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      AddressLine2: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      PostalCode: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      City: string;
+    
+      @ApiProperty({ type: Number })
+      @Column()
+      CountryId: number;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      CompanyName: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      CompanyVat: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      CompanyDataProtectionUrl: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      UploadLimit: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      StripeSubscriptionId: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      StripeSessionId: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      SubscriptionStatus: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      SubscriptionEndDate: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      TrialStartOn: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      TrialEndsOn: string;
+    
+      @ApiProperty({ type: Number })
+      @Column()
+      OwnerId: number;
+    
+      @ApiProperty({ type: Number })
+      @Column()
+      FileId: number;
+    
+      @ApiProperty({ type: Number })
+      @Column()
+      DefaultPrizeId: number;
+    
+      @ApiProperty({ type: Boolean })
+      @Column()
+      HasPassword: boolean;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      Password: string;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      Slug: string;
+    
+      @ApiProperty({ type: Number })
+      @Column()
+      CreatedById: number;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      CreatedOn: string;
+    
+      @ApiProperty({ type: Number })
+      @Column()
+      LastModifiedById: number;
+    
+      @ApiProperty({ type: String })
+      @Column()
+      LastModifiedOn: string;
 }

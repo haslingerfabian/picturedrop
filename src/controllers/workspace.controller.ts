@@ -18,6 +18,7 @@ export class WorkspacesController{
         operationId: 'getAllWorkspaces',
         summary: 'Get all workspaces'
     })
+      @ApiResponse({type: Workspace})
     @Get()
     async findAll(): Promise<Workspace[]> {
         return this.workspaceService.findAll();
