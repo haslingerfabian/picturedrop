@@ -5,32 +5,32 @@ import { WorkspaceService } from '../services/workspaces.service';
 import { CreateWorkspaceDto } from '../dto/workspaceCreate.dto';
 import { UpdateWorkspaceDto } from '../dto/workspaceUpdate.dto';
 import { Workspace } from '../entities/workspaces.entity';
+import { ApiBody, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Workspaces')
 @Controller('Workspaces')
 export class WorkspacesController{
     constructor(private readonly workspaceService: WorkspaceService) {}
 
-    @Post()
-    async create(@Body() createWorkspaceDto: CreateWorkspaceDto): Promise<Workspace> {
-      return this.workspaceService.create(createWorkspaceDto);
-    }
 
     // Alle Workspaces abrufen
+    @ApiOperation({
+        operationId: 'getAllWorkspaces',
+        summary: 'Get all workspaces'
+    })
     @Get()
     async findAll(): Promise<Workspace[]> {
         return this.workspaceService.findAll();
     }
 
     // Einen Workspace anhand der ID abrufen
+    @ApiOperation({
+        operationId: 'getWorkspaceById',
+        summary: 'Get workspace by id'
+    })
     @Get(':id')
     async findOne(@Param('id') id: number): Promise<Workspace> {
         return this.workspaceService.findOne(id);
-    }
-
-    // Einen Workspace anhand der ID aktualisieren
-    @Put(':id')
-    async update(@Param('id') id: number, @Body() updateworkspaceDto: UpdateWorkspaceDto): Promise<Workspace> {
-        return this.workspaceService.update(id, updateworkspaceDto);
     }
 
 }

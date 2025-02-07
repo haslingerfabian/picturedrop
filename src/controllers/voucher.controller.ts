@@ -1,14 +1,31 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get } from '@nestjs/common';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Controller, Get, Param } from '@nestjs/common';
 import { VouchersService } from '../services/voucher.service';
 import { Vouchers } from '../entities/voucher.entity';
+import { ApiBody, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('vouchers')
 @Controller('vouchers') // Der Controller ist unter der Route '/vouchers' erreichbar
 export class VouchersController {
-  constructor(private readonly usersService: VouchersService) {}
+  constructor(private readonly voucherService: VouchersService) {}
   
+  @ApiOperation({
+    operationId: 'getAllVouchers',
+    summary: 'Get all vouchers'
+  })
   @Get()
   async findAll(): Promise<Vouchers[]> {
-    return this.usersService.findAll();
+    return this.voucherService.findAll();
   }
+
+  @ApiOperation({
+    operationId: 'getVoucherById',
+    summary: 'get voucher by id'
+  })
+  @Get(':id')
+  async findOne(@Param('id') id: number): Promise<Vouchers> {
+        return this.voucherService.findOne(id);
+  }
+
 }

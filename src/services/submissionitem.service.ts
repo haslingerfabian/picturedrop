@@ -18,10 +18,6 @@ export class SubmissionItemService {
 
     submissionitem.Id = createsubmissionItemDto.Id;
     submissionitem.SubmissionId = createsubmissionItemDto.SubmissionId;
-    submissionitem.FileId = createsubmissionItemDto.FileId;
-    submissionitem.ThumbnailId = createsubmissionItemDto.ThumbnailId;
-    submissionitem.Width = createsubmissionItemDto.Width;
-    submissionitem.Height = createsubmissionItemDto.Height;
     submissionitem.ContentType = createsubmissionItemDto.ContentType;
     submissionitem.ContentLength = createsubmissionItemDto.ContentLength;
     submissionitem.Rating = createsubmissionItemDto.Rating;

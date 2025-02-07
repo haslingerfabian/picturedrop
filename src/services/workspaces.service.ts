@@ -18,7 +18,6 @@ export class WorkspaceService{
   async create(createWorkspaceDto: CreateWorkspaceDto): Promise<Workspace> {
     const workspace = new Workspace();
     workspace.Name = createWorkspaceDto.Name;
-    workspace.NameEn = createWorkspaceDto.NameEn;
     workspace.Description = createWorkspaceDto.Description;
     workspace.DescriptionEn = createWorkspaceDto.DescriptionEn;
     workspace.ContactUrl = createWorkspaceDto.ContactUrl;
@@ -69,14 +68,4 @@ export class WorkspaceService{
     }
     return workspace;
   }
-
-    // User aktualisieren
-    async update(Id: number, updateWorkspacerDto: UpdateWorkspaceDto): Promise<Workspace> {
-        const user = await this.workspaceRepository.findOne({ where: { Id } });
-        if (!user) {
-          throw new NotFoundException('Workspace not found');
-        }
-        await this.workspaceRepository.update({ Id }, updateWorkspacerDto);
-        return { ...user, ...updateWorkspacerDto }; // Rückgabe des aktualisierten Users
-    }
 }

@@ -10,9 +10,6 @@ export class Workspace {
     Name: string;
 
     @Column()
-    NameEn: string;
-
-    @Column()
     Description: string;
 
     @Column()

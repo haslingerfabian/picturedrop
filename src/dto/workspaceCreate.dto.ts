@@ -8,9 +8,6 @@ export class CreateWorkspaceDto{
     Name: string;
 
     @IsString()
-    NameEn: string;
-
-    @IsString()
     Description: string;
 
     @IsString()

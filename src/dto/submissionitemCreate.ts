@@ -11,22 +11,6 @@ export class CreateSubmissionItemDto {
     @IsOptional()
     SubmissionId?: number;
 
-    @IsNumber()
-    @IsOptional()
-    FileId?: number;
-
-    @IsNumber()
-    @IsOptional()
-    ThumbnailId?: number;
-
-    @IsNumber()
-    @IsOptional()
-    Width?: number;
-
-    @IsNumber()
-    @IsOptional()
-    Height?: number;
-
     @IsString()
     @IsOptional()
     ContentType?: string;

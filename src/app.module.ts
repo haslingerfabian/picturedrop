@@ -1,11 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersController } from './controllers/user.controller'
-import { UsersService } from './services/user.service'
 import { VouchersController } from './controllers/voucher.controller'
 import { VouchersService } from './services/voucher.service'
 import { Vouchers } from './entities/voucher.entity';
@@ -21,17 +18,17 @@ import { WorkspaceService } from './services/workspaces.service';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5433,
+      port: 5434,
       username: 'myuser',
       password: 'mypassword',
       database: 'mydb',
-      entities: [User,Vouchers,SubmissionItem, Workspace],
+      entities: [Vouchers,SubmissionItem, Workspace],
       synchronize: false,
     }),
-     TypeOrmModule.forFeature([User,Vouchers,SubmissionItem, Workspace]),
+     TypeOrmModule.forFeature([Vouchers,SubmissionItem, Workspace]),
   ],
-  controllers: [AppController,  UsersController, VouchersController,SubmissionItemController, WorkspacesController],
-  providers:[AppService, UsersService, VouchersService,SubmissionItemService, WorkspaceService]
+  controllers: [AppController, VouchersController,SubmissionItemController, WorkspacesController],
+  providers:[AppService, VouchersService,SubmissionItemService, WorkspaceService]
 })
 
 export class AppModule {}

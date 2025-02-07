@@ -8,18 +8,6 @@ export class UpdateSubmissionItemDto{
     @IsNumber()
     SubmissionId: number;
 
-    @IsNumber()
-    FileId: number;
-
-    @IsNumber()
-    ThumbnailId: number;
-
-    @IsNumber()
-    Width: number;
-
-    @IsNumber()
-    Height: number;
-
     @IsString()
     ContentType: string;
 

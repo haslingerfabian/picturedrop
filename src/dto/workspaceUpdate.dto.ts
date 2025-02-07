@@ -8,10 +8,6 @@ export class UpdateWorkspaceDto {
 
     @IsString()
     @IsOptional()
-    NameEn: string;
-
-    @IsString()
-    @IsOptional()
     Description: string;
 
     @IsString()
