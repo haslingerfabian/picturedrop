@@ -1,0 +1,442 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/api/vouchers": {
+      "get": {
+        "operationId": "getAllVouchers",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vouchers"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all vouchers",
+        "tags": [
+          "vouchers"
+        ]
+      }
+    },
+    "/api/vouchers/{id}": {
+      "get": {
+        "operationId": "getVoucherById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "get voucher by id",
+        "tags": [
+          "vouchers"
+        ]
+      }
+    },
+    "/api/submissionItems": {
+      "get": {
+        "operationId": "getAllSubmissionItems",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionItem"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all submission items",
+        "tags": [
+          "submissionItems"
+        ]
+      }
+    },
+    "/api/submissionItems/{id}": {
+      "get": {
+        "operationId": "getSubmissionItemById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Get submission item by id",
+        "tags": [
+          "submissionItems"
+        ]
+      }
+    },
+    "/api/Workspaces": {
+      "get": {
+        "operationId": "getAllWorkspaces",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workspace"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all workspaces",
+        "tags": [
+          "Workspaces"
+        ]
+      }
+    },
+    "/api/Workspaces/{id}": {
+      "get": {
+        "operationId": "getWorkspaceById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Get workspace by id",
+        "tags": [
+          "Workspaces"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Picturedrop - Admin Panel",
+    "description": "Picturedrop Swagger Documentation",
+    "version": "1.0",
+    "contact": {
+
+    }
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "Vouchers": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "number"
+          },
+          "VoucherCode": {
+            "type": "string"
+          },
+          "ValidatedOn": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "WorkspaceId": {
+            "type": "string"
+          },
+          "WinningChallengeId": {
+            "type": "string"
+          },
+          "CreatedById": {
+            "type": "string"
+          },
+          "CreatedOn": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "LastModifiedById": {
+            "type": "string"
+          },
+          "LastModifiedOn": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "SubmissionId": {
+            "type": "string"
+          },
+          "VoucherPrize": {
+            "type": "string"
+          },
+          "VoucherPrizeEn": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Id",
+          "VoucherCode",
+          "ValidatedOn",
+          "WorkspaceId",
+          "WinningChallengeId",
+          "CreatedById",
+          "CreatedOn",
+          "LastModifiedById",
+          "LastModifiedOn",
+          "SubmissionId",
+          "VoucherPrize",
+          "VoucherPrizeEn"
+        ]
+      },
+      "SubmissionItem": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "number"
+          },
+          "SubmissionId": {
+            "type": "number"
+          },
+          "FileId": {
+            "type": "number"
+          },
+          "ThumbnailId": {
+            "type": "number"
+          },
+          "Width": {
+            "type": "number"
+          },
+          "Height": {
+            "type": "number"
+          },
+          "ContentType": {
+            "type": "string"
+          },
+          "ContentLength": {
+            "type": "number"
+          },
+          "Rating": {
+            "type": "number"
+          },
+          "Orientation": {
+            "type": "number"
+          },
+          "CreatedById": {
+            "type": "number"
+          },
+          "CreatedOn": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "LastModifiedById": {
+            "type": "number"
+          },
+          "LastModifiedOn": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "Id",
+          "SubmissionId",
+          "FileId",
+          "ThumbnailId",
+          "Width",
+          "Height",
+          "ContentType",
+          "ContentLength",
+          "Rating",
+          "Orientation",
+          "CreatedById",
+          "CreatedOn",
+          "LastModifiedById",
+          "LastModifiedOn"
+        ]
+      },
+      "Workspace": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "number"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "DescriptionEn": {
+            "type": "string"
+          },
+          "ContactUrl": {
+            "type": "string"
+          },
+          "ContactMail": {
+            "type": "string"
+          },
+          "ContactPhone": {
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "DateOfBirth": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "AddressLine1": {
+            "type": "string"
+          },
+          "AddressLine2": {
+            "type": "string"
+          },
+          "PostalCode": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "CountryId": {
+            "type": "number"
+          },
+          "CompanyName": {
+            "type": "string"
+          },
+          "CompanyVat": {
+            "type": "string"
+          },
+          "CompanyDataProtectionUrl": {
+            "type": "string"
+          },
+          "UploadLimit": {
+            "type": "string"
+          },
+          "StripeSubscriptionId": {
+            "type": "string"
+          },
+          "StripeSessionId": {
+            "type": "string"
+          },
+          "SubscriptionStatus": {
+            "type": "string"
+          },
+          "SubscriptionEndDate": {
+            "type": "string"
+          },
+          "TrialStartOn": {
+            "type": "string"
+          },
+          "TrialEndsOn": {
+            "type": "string"
+          },
+          "OwnerId": {
+            "type": "number"
+          },
+          "FileId": {
+            "type": "number"
+          },
+          "DefaultPrizeId": {
+            "type": "number"
+          },
+          "HasPassword": {
+            "type": "boolean"
+          },
+          "Password": {
+            "type": "string"
+          },
+          "Slug": {
+            "type": "string"
+          },
+          "CreatedById": {
+            "type": "number"
+          },
+          "CreatedOn": {
+            "type": "string"
+          },
+          "LastModifiedById": {
+            "type": "number"
+          },
+          "LastModifiedOn": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Id",
+          "Name",
+          "Description",
+          "DescriptionEn",
+          "ContactUrl",
+          "ContactMail",
+          "ContactPhone",
+          "FirstName",
+          "LastName",
+          "DateOfBirth",
+          "AddressLine1",
+          "AddressLine2",
+          "PostalCode",
+          "City",
+          "CountryId",
+          "CompanyName",
+          "CompanyVat",
+          "CompanyDataProtectionUrl",
+          "UploadLimit",
+          "StripeSubscriptionId",
+          "StripeSessionId",
+          "SubscriptionStatus",
+          "SubscriptionEndDate",
+          "TrialStartOn",
+          "TrialEndsOn",
+          "OwnerId",
+          "FileId",
+          "DefaultPrizeId",
+          "HasPassword",
+          "Password",
+          "Slug",
+          "CreatedById",
+          "CreatedOn",
+          "LastModifiedById",
+          "LastModifiedOn"
+        ]
+      }
+    }
+  }
+}
