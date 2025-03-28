@@ -11,6 +11,7 @@ export class OpenapiComponent {
 
   constructor(private apiService: ApiService)
   {
-    this.apiService.getData()
+    this.apiService.getAllSubmissionItemData()
   }
+
 }

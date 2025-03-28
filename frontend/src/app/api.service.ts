@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private submissionItemService: SubmissionItemsService) {}
 
-  getData()
+  getAllSubmissionItemData()
   {
     this.submissionItemService.getAllSubmissionItems().subscribe(value => {console.log(value)});
   }
