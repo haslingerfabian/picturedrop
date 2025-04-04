@@ -10,7 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @Component({
   selector: 'app-root',
   //RouterOutlet, OpenapiComponent, LoginComponent, SubmissionsComponent, WorkspacesComponent,
-  imports: [ NavbarComponent],
+  imports: [ NavbarComponent, RouterOutlet, OpenapiComponent, LoginComponent, SubmissionsComponent, WorkspacesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
