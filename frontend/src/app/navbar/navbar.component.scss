@@ -1,0 +1,63 @@
+@import "./../tokens.scss";
+
+.navbar-container {
+  display: flex;
+  width: 100%;
+  height: 110px; 
+}
+
+.navbar-left {
+  background-color: $collection-1-colors-purple-purple-100; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 0 20px;
+  width: 1200px;
+}
+
+.navbar-title {
+  color: black;
+  font-size: 3rem; 
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap; 
+}
+
+.navbar-right {
+  background-color: $collection-1-colors-purple-purple-200;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 15px 0; 
+  gap: 70px; 
+  width: 950px;
+  margin-left: auto; 
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    .icon-placeholder {
+      filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(1000%) hue-rotate(250deg);
+      transform: scale(1.1);
+    }
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.icon-placeholder {
+  width: 100px; 
+  height: 75px;
+  transition: all 0.3s ease;
+}
+
