@@ -30,7 +30,7 @@
 .right-box {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 87%;
   max-height: 100%;
   overflow: hidden;
   padding: 10px;
@@ -43,15 +43,39 @@
   padding-right: 10px;
 }
 
+.scrollable-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 6px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-list::-webkit-scrollbar-button {
+  display: none;
+}
+
 .list-item {
-  background: #d1a9e0;
+  background: $collection-1-colors-purple-purple-300;
   padding: 30px;
   margin-bottom: 25px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
   border-radius: 90px;
   word-break: break-word;
   height: 50px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  font-size: 30px;  /* Schriftgröße */
+  color: #ffffff;  /* Textfarbe */
+  text-align: left;  /* Textzentrierung */
+  text-transform: capitalize;
 }
