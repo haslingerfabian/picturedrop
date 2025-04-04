@@ -1,0 +1,57 @@
+@import "./../tokens.scss";
+
+.submissions-container {
+  background-color: $collection-1-colors-purple-purple-600;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-box {
+  background-color: $collection-1-colors-purple-purple-200;
+  width: 90%;
+  height: 75vh;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  justify-content: center;
+}
+
+.box {
+  background-color: $collection-1-colors-purple-purple-100;
+  width: 45%;
+  height: 90%;
+  flex: 1;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.scrollable-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  padding-right: 10px;
+}
+
+.list-item {
+  background: #d1a9e0;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 90px;
+  word-break: break-word;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
