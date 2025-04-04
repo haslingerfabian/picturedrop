@@ -1,0 +1,81 @@
+@import "./../tokens.scss";
+
+.submissions-container {
+  background-color: $collection-1-colors-purple-purple-600;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-box {
+  background-color: $collection-1-colors-purple-purple-200;
+  width: 90%;
+  height: 75vh;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  justify-content: center;
+}
+
+.box {
+  background-color: $collection-1-colors-purple-purple-100;
+  width: 45%;
+  height: 90%;
+  flex: 1;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  height: 87%;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.scrollable-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  padding-right: 10px;
+}
+
+.scrollable-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 6px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+.list-item {
+  background: $collection-1-colors-purple-purple-300;
+  padding: 30px;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  border-radius: 90px;
+  word-break: break-word;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  font-size: 30px;  /* Schriftgröße */
+  color: #ffffff;  /* Textfarbe */
+  text-align: left;  /* Textzentrierung */
+  text-transform: capitalize;
+}
