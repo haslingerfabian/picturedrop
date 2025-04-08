@@ -1,36 +1,13 @@
-<div class="workspaces-container">
-    <!-- Header-Bar -->
-    <div class="header-bar">
-      <div class="header-left">
-        <h1 class="page-title">Workspaces</h1>
-      </div>
-      <div class="header-right">
-        <div class="icon-placeholder">icon</div>
-        <div class="icon-placeholder">icon</div>
-        <div class="icon-placeholder">icon</div>
-        <div class="icon-placeholder">icon</div>
-      </div>
-    </div>
-  
-    <!-- Leeres zentrales Panel (nur Umrandung / Hintergrund) -->
-    <div class="center-panel">
-      <!-- Hier können später Workspace-Items eingefügt werden -->
-    </div>
-  
-    <!-- Stats-Bar unten -->
-    <div class="stats-bar">
-      <div class="stat-item">
-        <span>Total Workspaces:</span>
-        <span class="stat-value">XY</span>
-      </div>
-      <div class="stat-item">
-        <span>Active Workspaces:</span>
-        <span class="stat-value">XY</span>
-      </div>
-      <div class="stat-item">
-        <span>Inactive Workspaces:</span>
-        <span class="stat-value">XY</span>
-      </div>
+<div class="submissions-container">
+  <div class="content-box">
+    <div class="scrollable-list">
+      <div class="list-item" *ngFor="let item of items">{{ item }}</div>
     </div>
   </div>
-  
+
+  <div class="workspace-footer">
+    <div>Total Workspaces: XY</div>
+    <div>Active Workspaces: XY</div>
+    <div>Inactive Workspaces: XY</div>
+  </div>
+</div>
