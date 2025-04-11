@@ -9,39 +9,23 @@ import { filter } from 'rxjs';
 })
 export class NavbarComponent {
   title: string = 'Titel'; // Standard-Titel
+  currentRoute: string = ''; // Variable zur Speicherung der aktuellen Route
 
   constructor(private router: Router) {
+    // Überwache NavigationEnd-Events und speichere die aktuelle URL
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
-      this.updateTitle(event.urlAfterRedirects); 
+      this.currentRoute = event.urlAfterRedirects; // Setze die aktuelle Route
     });
-  }
-
-  private updateTitle(url: string) {
-    switch (url) {
-      case '/workspaces':
-        this.title = 'Workspaces';
-        break;
-      case '/vouchers':
-        this.title = 'Vouchers';
-        break;
-      case '/uploads':
-        this.title = 'Uploads';
-        break;
-      case '/logout':
-        this.title = 'Logout';
-        break;
-      case '/login':
-        this.title = 'Login';
-        break;
-      default:
-        this.title = 'Page'; 
-        break;
-    }
   }
 
   navigateTo(route: string) {
     this.router.navigate([`/${route}`]);
+  }
+
+  // Methode zum Überprüfen, ob die Route aktiv ist
+  isActive(route: string): boolean {
+    return this.currentRoute === `/${route}`;
   }
 }
