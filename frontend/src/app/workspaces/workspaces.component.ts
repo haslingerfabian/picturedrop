@@ -9,4 +9,5 @@ import { WorkspaceListComponent } from '../workspace-list/workspace-list.compone
   styleUrls: ['./workspaces.component.scss']
 })
 export class WorkspacesComponent {
+  
 }
