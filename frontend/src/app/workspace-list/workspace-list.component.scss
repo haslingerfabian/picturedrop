@@ -3,57 +3,80 @@
 .list-box {
   background-color: $collection-1-colors-purple-purple-200;
   width: 90%;
-  height: calc(75vh - 70px); // Footer Höhe berücksichtigen
+  width: 1200px;
+  height: calc(75vh - 70px);
   border-radius: 12px 12px 0 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 30px;
+  margin: 0 auto; // Zentriert den Container horizontal
   overflow: hidden;
+  position: relative; // Für absolute Positionierung der Stats
 }
-
 
 .scrollable-list {
+  flex-grow: 1;
   overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 100%;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 100%;
-  padding-right: 10px;
-}
+  box-sizing: border-box;
 
-.scrollable-list::-webkit-scrollbar {
-  width: 12px;
-}
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
 
-.scrollable-list::-webkit-scrollbar-thumb {
-  background-color: white;
-  border-radius: 6px;
-}
-
-.scrollable-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scrollable-list::-webkit-scrollbar-button {
-  display: none;
+  &::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 4px;
+  }
 }
 
 .list-item {
   background: $collection-1-colors-purple-purple-300;
-  padding: 30px;
-  margin-bottom: 25px;
-  margin-right: 25px;
-  margin-left: 25px;
-  margin-top: 25px;
+  padding: 20px 25px; /* Innenabstand */
+  display: flex; /* Flexbox aktivieren */
+  justify-content: space-between; /* Elemente gleichmäßig verteilen */
+  align-items: center; /* Vertikale Zentrierung */
+  margin-bottom: 1.5em; /* Abstand zwischen den Boxen */
   border-radius: 90px;
-  word-break: break-word;
-  height: 50px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+  font-size: 30px;
+  color: white;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px; /* Feste Höhe für die Box */
+}
 
-  font-size: 30px;  /* Schriftgröße */
-  color: #ffffff;  /* Textfarbe */
-  text-align: left;  /* Textzentrierung */
-  text-transform: capitalize;
+.active {
+  background-color: $collection-1-colors-green-green-500;
+}
+
+.inactive {
+  background-color: $collection-1-colors-red-red-500;
+}
+
+.upload-icon {
+  width: auto;
+  height: 100%; /* Passt die Höhe an die Box an */
+  max-height: 48px; /* Maximale Höhe des Icons */
+  margin: 0 20px; /* Gleicher Abstand links und rechts */
+}
+.workspace-name {
+  flex: 1; /* Nimmt den verfügbaren Platz ein */
+  text-align: left; /* Text linksbündig */
+  font-size: 1.5rem; /* Maximale Schriftgröße */
+  white-space: nowrap; /* Verhindert Zeilenumbrüche */
+  overflow: hidden; /* Verhindert Überlauf */
+  text-overflow: ellipsis; /* Zeigt "..." bei Überlauf */
+}
+
+.random-number {
+  font-size: 1.5rem; /* Maximale Schriftgröße */
+  color: white;
+  margin-left: 20px; /* Abstand zum Icon */
+  white-space: nowrap; /* Verhindert Zeilenumbrüche */
 }

@@ -1,7 +1,11 @@
 <div class="list-box">
-  <button (click)="getAllSubmissionItemData()">Click me!</button>
-
   <div class="scrollable-list">
-    <div class="list-item" *ngFor="let item of items">{{ item }}</div>
+    <div class="list-item" *ngFor="let workspace of workspaces"
+     [ngClass]="{'active': workspace.SubscriptionStatus === 'Active', 'inactive': workspace.SubscriptionStatus !== 'Active'}"
+    >
+      <span class="workspace-name">{{ workspace.Name }}</span>
+      <img class="upload-icon" src="/Upload_image.png" alt="Upload">
+      <span class="random-number">{{ 14 }}</span>
+    </div>
   </div>
 </div>

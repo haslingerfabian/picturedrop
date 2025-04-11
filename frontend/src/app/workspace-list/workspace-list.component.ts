@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SubmissionItemsService } from '../../../libs/src/app/api/services';
+import { WorkspacesService } from '../../../libs/src/app/api/services';
+import { Workspace } from '../../../libs/src/app/api/models/workspace';
+
 
 @Component({
   selector: 'app-workspace-list',
@@ -10,12 +12,22 @@ import { SubmissionItemsService } from '../../../libs/src/app/api/services';
 })
 export class WorkspaceListComponent {
 
-  items = Array.from({ length: 20 }, (_, i) => `Element ${i + 1}`); // Beispiel-Liste
+  workspaces: Workspace[] = [];
 
-    constructor(private submissionItemService: SubmissionItemsService) {}
+  constructor(private workspaceService: WorkspacesService) {}
 
-    getAllSubmissionItemData()
-    {
-      this.submissionItemService.getAllSubmissionItems().subscribe(value => {console.log(value)});
-    }
+  ngOnInit() {
+    this.loadWorkspaces();
+  }
+
+  loadWorkspaces(): void {
+    this.workspaceService.getAllWorkspaces().subscribe({
+      next: (data) => {
+        this.workspaces = Array.isArray(data) ? data : [data];
+      },
+      error: (err) => {
+        console.error('Fehler beim Laden der Workspaces:', err);
+      }
+    });
+  }
 }
