@@ -1,10 +1,11 @@
+import { WorkspaceListComponent } from './../workspace-list/workspace-list.component';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-submissions',
-  imports: [CommonModule],
+  imports: [CommonModule, WorkspaceListComponent],
   templateUrl: './submissions.component.html',
   styleUrl: './submissions.component.scss'
 })
