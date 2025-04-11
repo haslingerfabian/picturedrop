@@ -23,57 +23,15 @@
   overflow: hidden;
 }
 
-.scrollable-list {
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 100%;
-  width: 100%;
-  padding-right: 10px;
-}
-
-.scrollable-list::-webkit-scrollbar {
-  width: 12px;
-}
-
-.scrollable-list::-webkit-scrollbar-thumb {
-  background-color: white;
-  border-radius: 6px;
-}
-
-.scrollable-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scrollable-list::-webkit-scrollbar-button {
-  display: none;
-}
-
-.list-item {
-  background: $collection-1-colors-purple-purple-300;
-  padding: 30px;
-  margin-bottom: 25px;
-  margin-right: 25px;
-  margin-left: 25px;
-  margin-top: 25px;
-  border-radius: 90px;
-  word-break: break-word;
-  height: 50px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-
-  font-size: 30px;  /* Schriftgröße */
-  color: #ffffff;  /* Textfarbe */
-  text-align: left;  /* Textzentrierung */
-  text-transform: capitalize;
-}
-
 .workspace-footer {
-  background: $collection-1-colors-purple-purple-300;
+  background: $collection-1-colors-purple-purple-400;
   color: white;
-  text-align: center;
   padding: 20px;
   border-radius: 0 0 12px 12px;
-  width: 90%;
-  font-size: 14px;
+  width: 91.1%;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

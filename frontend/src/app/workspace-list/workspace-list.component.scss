@@ -1,0 +1,59 @@
+@import "./../tokens.scss";
+
+.list-box {
+  background-color: $collection-1-colors-purple-purple-200;
+  width: 90%;
+  height: calc(75vh - 70px); // Footer Höhe berücksichtigen
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+
+.scrollable-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.scrollable-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 6px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+.list-item {
+  background: $collection-1-colors-purple-purple-300;
+  padding: 30px;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  border-radius: 90px;
+  word-break: break-word;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  font-size: 30px;  /* Schriftgröße */
+  color: #ffffff;  /* Textfarbe */
+  text-align: left;  /* Textzentrierung */
+  text-transform: capitalize;
+}

@@ -9,6 +9,6 @@ import { NavbarComponent } from "../navbar/navbar.component";
   styleUrl: './submissions.component.scss'
 })
 export class SubmissionsComponent {
-
   items = Array.from({ length: 20 }, (_, i) => `Element ${i + 1}`); // Beispiel-Liste
+
 }
