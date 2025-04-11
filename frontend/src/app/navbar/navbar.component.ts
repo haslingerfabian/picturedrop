@@ -16,10 +16,36 @@ export class NavbarComponent {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+      this.updateTitle(event.urlAfterRedirects); // Aktualisiere den Titel
       this.currentRoute = event.urlAfterRedirects; // Setze die aktuelle Route
     });
   }
 
+  // Methode zum Aktualisieren des Titels je nach Route
+  private updateTitle(url: string) {
+    switch (url) {
+      case '/workspaces':
+        this.title = 'Workspaces';
+        break;
+      case '/vouchers':
+        this.title = 'Vouchers';
+        break;
+      case '/uploads':
+        this.title = 'Uploads';
+        break;
+      case '/logout':
+        this.title = 'Logout';
+        break;
+      case '/login':
+        this.title = 'Login';
+        break;
+      default:
+        this.title = 'Titel'; // Standardwert für den Titel
+        break;
+    }
+  }
+
+  // Methode zum Navigieren
   navigateTo(route: string) {
     this.router.navigate([`/${route}`]);
   }
