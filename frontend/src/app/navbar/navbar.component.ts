@@ -1,18 +1,47 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-   title: string = 'Titel'; // Standard-Titel
+  title: string = 'Titel'; // Standard-Titel
 
-   constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.updateTitle(event.urlAfterRedirects); 
+    });
+  }
 
-   navigateTo(route: string) {
-     this.router.navigate([route]);
-   }
+  private updateTitle(url: string) {
+    switch (url) {
+      case '/workspaces':
+        this.title = 'Workspaces';
+        break;
+      case '/vouchers':
+        this.title = 'Vouchers';
+        break;
+      case '/uploads':
+        this.title = 'Uploads';
+        break;
+      case '/logout':
+        this.title = 'Logout';
+        break;
+      case '/login':
+        this.title = 'Login';
+        break;
+      default:
+        this.title = 'Page'; 
+        break;
+    }
+  }
+
+  navigateTo(route: string) {
+    this.router.navigate([`/${route}`]);
+  }
 }
