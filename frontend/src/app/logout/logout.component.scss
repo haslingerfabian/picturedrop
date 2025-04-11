@@ -1,0 +1,45 @@
+@import "./../tokens.scss";
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: $collection-1-colors-purple-purple-600;
+}
+
+.logout-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  padding: 50px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+
+.logout-button {
+  margin-top: 30px;
+  width: 50%;
+  padding: 16px;
+  background-color: #B187F7;
+  color: white;
+  border: none;
+  border-radius: 35px;
+  font-size: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+
+  &:hover {
+    background-color: darken(#B187F7, 10%);
+  }
+}
