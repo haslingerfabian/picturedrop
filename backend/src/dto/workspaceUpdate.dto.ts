@@ -4,137 +4,137 @@ import { IsString, IsOptional, IsNumber, IsDate, IsBoolean } from 'class-validat
 export class UpdateWorkspaceDto {
     @IsString()
     @IsOptional()
-    Name: string;
+    Name!: string;
 
     @IsString()
     @IsOptional()
-    Description: string;
+    Description!: string;
 
     @IsString()
     @IsOptional()
-    DescriptionEn: string;
+    DescriptionEn!: string;
 
     @IsString()
     @IsOptional()
-    ContactUrl: string;
+    ContactUrl!: string;
 
     @IsString()
     @IsOptional()
-    ContactMail: string;
+    ContactMail!: string;
 
     @IsString()
     @IsOptional()
-    ContactPhone: string;
+    ContactPhone!: string;
 
     @IsString()
     @IsOptional()
-    FirstName: string;
+    FirstName!: string;
 
     @IsString()
     @IsOptional()
-    LastName: string;
+    LastName!: string;
 
     @IsDate()
     @IsOptional()
-    DateOfBirth: Date;
+    DateOfBirth!: Date;
 
     @IsString()
     @IsOptional()
-    AddressLine1: string;
+    AddressLine1!: string;
 
     @IsString()
     @IsOptional()
-    AddressLine2: string;
+    AddressLine2!: string;
 
     @IsString()
     @IsOptional()
-    PostalCode: string;
+    PostalCode!: string;
 
     @IsString()
     @IsOptional()
-    City: string;
+    City!: string;
 
     @IsNumber()
     @IsOptional()
-    CountryId: number;
+    CountryId!: number;
 
     @IsString()
     @IsOptional()
-    CompanyName: string;
+    CompanyName!: string;
 
     @IsString()
     @IsOptional()
-    CompanyVat: string;
+    CompanyVat!: string;
 
     @IsString()
     @IsOptional()
-    CompanyDataProtectionUrl: string;
+    CompanyDataProtectionUrl!: string;
 
     @IsString()
     @IsOptional()
-    UploadLimit: string;
+    UploadLimit!: string;
 
     @IsString()
     @IsOptional()
-    StripeSubscriptionId: string;
+    StripeSubscriptionId!: string;
 
     @IsString()
     @IsOptional()
-    StripeSessionId: string;
+    StripeSessionId!: string;
 
     @IsString()
     @IsOptional()
-    SubscriptionStatus: string;
+    SubscriptionStatus!: string;
 
     @IsString()
     @IsOptional()
-    SubscriptionEndDate: string;
+    SubscriptionEndDate!: string;
 
     @IsString()
     @IsOptional()
-    TrialStartOn: string;
+    TrialStartOn!: string;
 
     @IsString()
     @IsOptional()
-    TrialEndsOn: string;
+    TrialEndsOn!: string;
 
     @IsNumber()
     @IsOptional()
-    OwnerId: number;
+    OwnerId!: number;
 
     @IsNumber()
     @IsOptional()
-    FileId: number;
+    FileId!: number;
 
     @IsNumber()
     @IsOptional()
-    DefaultPrizeId: number;
+    DefaultPrizeId!: number;
 
     @IsBoolean()
     @IsOptional()
-    HasPassword: boolean;
+    HasPassword!: boolean;
 
     @IsString()
     @IsOptional()
-    Password: string;
+    Password!: string;
 
     @IsString()
     @IsOptional()
-    Slug: string;
+    Slug!: string;
 
     @IsNumber()
     @IsOptional()
-    CreatedById: number;
+    CreatedById!: number;
 
     @IsString()
     @IsOptional()
-    CreatedOn: string;
+    CreatedOn!: string;
 
     @IsNumber()
     @IsOptional()
-    LastModifiedById: number;
+    LastModifiedById!: number;
 
     @IsString()
     @IsOptional()
-    LastModifiedOn: string;
+    LastModifiedOn!: string;
 }

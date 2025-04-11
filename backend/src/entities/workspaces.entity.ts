@@ -7,141 +7,141 @@ export class Workspace {
 
       @ApiProperty({ type: Number })
       @PrimaryGeneratedColumn()
-      Id: number;
+      Id!: number;
     
       @ApiProperty({ type: String })
       @Column()
-      Name: string;
+      Name!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      Description: string;
+      Description!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      DescriptionEn: string;
+      DescriptionEn!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      ContactUrl: string;
+      ContactUrl!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      ContactMail: string;
+      ContactMail!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      ContactPhone: string;
+      ContactPhone!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      FirstName: string;
+      FirstName!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      LastName: string;
+      LastName!: string;
     
       @ApiProperty({ type: Date })
       @Column()
-      DateOfBirth: Date;
+      DateOfBirth!: Date;
     
       @ApiProperty({ type: String })
       @Column()
-      AddressLine1: string;
+      AddressLine1!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      AddressLine2: string;
+      AddressLine2!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      PostalCode: string;
+      PostalCode!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      City: string;
+      City!: string;
     
       @ApiProperty({ type: Number })
       @Column()
-      CountryId: number;
+      CountryId!: number;
     
       @ApiProperty({ type: String })
       @Column()
-      CompanyName: string;
+      CompanyName!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      CompanyVat: string;
+      CompanyVat!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      CompanyDataProtectionUrl: string;
+      CompanyDataProtectionUrl!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      UploadLimit: string;
+      UploadLimit!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      StripeSubscriptionId: string;
+      StripeSubscriptionId!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      StripeSessionId: string;
+      StripeSessionId!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      SubscriptionStatus: string;
+      SubscriptionStatus!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      SubscriptionEndDate: string;
+      SubscriptionEndDate!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      TrialStartOn: string;
+      TrialStartOn!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      TrialEndsOn: string;
+      TrialEndsOn!: string;
     
       @ApiProperty({ type: Number })
       @Column()
-      OwnerId: number;
+      OwnerId!: number;
     
       @ApiProperty({ type: Number })
       @Column()
-      FileId: number;
+      FileId!: number;
     
       @ApiProperty({ type: Number })
       @Column()
-      DefaultPrizeId: number;
+      DefaultPrizeId!: number;
     
       @ApiProperty({ type: Boolean })
       @Column()
-      HasPassword: boolean;
+      HasPassword!: boolean;
     
       @ApiProperty({ type: String })
       @Column()
-      Password: string;
+      Password!: string;
     
       @ApiProperty({ type: String })
       @Column()
-      Slug: string;
+      Slug!: string;
     
       @ApiProperty({ type: Number })
       @Column()
-      CreatedById: number;
+      CreatedById!: number;
     
       @ApiProperty({ type: String })
       @Column()
-      CreatedOn: string;
+      CreatedOn!: string;
     
       @ApiProperty({ type: Number })
       @Column()
-      LastModifiedById: number;
+      LastModifiedById!: number;
     
       @ApiProperty({ type: String })
       @Column()
-      LastModifiedOn: string;
+      LastModifiedOn!: string;
 }

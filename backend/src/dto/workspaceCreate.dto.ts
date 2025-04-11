@@ -1,108 +1,142 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prettier/prettier */
-import { IsString, IsEmail, IsDate, IsNumber, IsBoolean} from 'class-validator';
+import { IsString, IsEmail, IsDate, IsNumber, IsBoolean, IsOptional, IsNotEmpty } from 'class-validator';
 
-export class CreateWorkspaceDto{
+export class CreateWorkspaceDto {
     @IsString()
-    Name: string;
-
-    @IsString()
-    Description: string;
+    @IsNotEmpty()
+    Name!: string;
 
     @IsString()
-    DescriptionEn: string;
+    @IsOptional()
+    Description!: string;
 
     @IsString()
-    ContactUrl: string;
+    @IsOptional()
+    DescriptionEn!: string;
 
     @IsString()
-    ContactMail: string;
+    @IsOptional()
+    ContactUrl!: string;
 
     @IsString()
-    ContactPhone: string;
+    @IsEmail()
+    @IsOptional()
+    ContactMail!: string;
 
     @IsString()
-    FirstName: string;
+    @IsOptional()
+    ContactPhone!: string;
 
     @IsString()
-    LastName: string;
+    @IsOptional()
+    FirstName!: string;
+
+    @IsString()
+    @IsOptional()
+    LastName!: string;
 
     @IsDate()
-    DateOfBirth: Date;
+    @IsOptional()
+    DateOfBirth!: Date;
 
     @IsString()
-    AddressLine1: string;
+    @IsOptional()
+    AddressLine1!: string;
 
     @IsString()
-    AddressLine2: string;
+    @IsOptional()
+    AddressLine2!: string;
 
     @IsString()
-    PostalCode: string;
+    @IsOptional()
+    PostalCode!: string;
 
     @IsString()
-    City: string;
+    @IsOptional()
+    City!: string;
 
     @IsNumber()
-    CountryId: number;
+    @IsOptional()
+    CountryId!: number;
 
     @IsString()
-    CompanyName: string;
+    @IsOptional()
+    CompanyName!: string;
 
     @IsString()
-    CompanyVat: string;
+    @IsOptional()
+    CompanyVat!: string;
 
     @IsString()
-    CompanyDataProtectionUrl: string;
+    @IsOptional()
+    CompanyDataProtectionUrl!: string;
 
     @IsString()
-    UploadLimit: string;
+    @IsOptional()
+    UploadLimit!: string;
 
     @IsString()
-    StripeSubscriptionId: string;
+    @IsOptional()
+    StripeSubscriptionId!: string;
 
     @IsString()
-    StripeSessionId: string;
+    @IsOptional()
+    StripeSessionId!: string;
 
     @IsString()
-    SubscriptionStatus: string;
+    @IsOptional()
+    SubscriptionStatus!: string;
 
     @IsString()
-    SubscriptionEndDate: string;
+    @IsOptional()
+    SubscriptionEndDate!: string;
 
     @IsString()
-    TrialStartOn: string;
+    @IsOptional()
+    TrialStartOn!: string;
 
     @IsString()
-    TrialEndsOn: string;
+    @IsOptional()
+    TrialEndsOn!: string;
 
     @IsNumber()
-    OwnerId: number;
+    @IsOptional()
+    OwnerId!: number;
 
     @IsNumber()
-    FileId: number;
+    @IsOptional()
+    FileId!: number;
 
     @IsNumber()
-    DefaultPrizeId: number;
+    @IsOptional()
+    DefaultPrizeId!: number;
 
     @IsBoolean()
-    HasPassword: boolean;
+    @IsOptional()
+    HasPassword!: boolean;
 
     @IsString()
-    Password: string;
+    @IsOptional()
+    Password!: string;
 
     @IsString()
-    Slug: string;
+    @IsOptional()
+    Slug!: string;
 
     @IsNumber()
-    CreatedById: number;
+    @IsOptional()
+    CreatedById!: number;
 
     @IsString()
-    CreatedOn: string;
+    @IsOptional()
+    CreatedOn!: string;
 
     @IsNumber()
-    LastModifiedById: number;
+    @IsOptional()
+    LastModifiedById!: number;
 
     @IsString()
-    LastModifiedOn: string;
+    @IsOptional()
+    LastModifiedOn!: string;
 }
