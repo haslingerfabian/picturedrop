@@ -18,7 +18,7 @@ import { WorkspaceService } from './services/workspaces.service';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5434,
+      port: 5433,
       username: 'myuser',
       password: 'mypassword',
       database: 'mydb',

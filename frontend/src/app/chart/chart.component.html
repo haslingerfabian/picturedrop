@@ -1,0 +1,41 @@
+<div class="chart-outer-container" *ngIf="isBrowser">
+  <div class="chart-inner-container">
+    <div class="chart-header">
+      Selected year: <strong>{{ selectedYear }}</strong>
+    </div>
+    
+    <div class="chart-content">
+      <div class="chart-visual">
+        <canvas
+          baseChart
+          [type]="pieChartType"
+          [data]="pieChartData"
+          [options]="pieChartOptions">
+        </canvas>
+      </div>
+      
+      <div class="chart-legend">
+        <div *ngFor="let label of legendLabels" class="legend-row">
+          <div class="legend-item">
+            <div class="color-box" [style.background-color]="getColor(label[0])"></div>
+            <span>{{ label[0] }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" [style.background-color]="getColor(label[1])"></div>
+            <span>{{ label[1] }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="chart-icon" (click)="toggleYearSelector($event)">
+        <img src="/chart.png" alt="Chart Icon">
+      </div>
+      
+      <div class="year-selector" *ngIf="showYearSelector">
+        <div *ngFor="let year of availableYears" class="year-option" (click)="selectYear(year); $event.stopPropagation()">
+          {{ year }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
