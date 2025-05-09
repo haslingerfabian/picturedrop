@@ -2,7 +2,7 @@
 
 .submissions-container {
   background-color: $collection-1-colors-purple-purple-600;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +61,7 @@
 }
 
 .list-item {
+  cursor: pointer;
   background: $collection-1-colors-purple-purple-300;
   padding: 30px;
   margin-bottom: 25px;
@@ -78,4 +79,8 @@
   color: #ffffff;  /* Textfarbe */
   text-align: left;  /* Textzentrierung */
   text-transform: capitalize;
+}
+
+.list-item.selected {
+  background-color: yellow;
 }
