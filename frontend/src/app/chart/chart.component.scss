@@ -140,3 +140,109 @@
     background-color: #f0f0f0;
   }
 }
+
+/* Mobile Styles */
+@media (max-width: 420px) {
+  .chart-outer-container {
+    min-height: auto;
+    background-color: $collection-1-colors-purple-purple-200;
+  }
+
+  .chart-inner-container {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .chart-header {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 16px;
+    margin: -5px;
+    
+    strong {
+      margin-left: 5px;
+      display: inline;
+    }
+  }
+
+  .chart-content {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    position: relative;
+    padding-bottom: 40px; /* Platz für Icon */
+  }
+
+  .chart-visual {
+    min-height: 220px;
+    margin: 0;
+    width: 100%;
+    
+    canvas {
+      max-height: 220px;
+    }
+  }
+
+  .chart-legend {
+    width: 90%;
+    padding: 10px;
+    margin: 0;
+    background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    border-radius: 12px;
+  }
+
+  .legend-row {
+    display: contents;
+  }
+
+  .legend-item {
+    font-size: 20px;
+    gap: 5px;
+    padding: 2px 0px;
+    background-color: $collection-1-colors-purple-purple-300;
+    border-radius: 4px;
+    width: 100%;  
+    
+    .color-box {
+      width: 20px;
+      height: 20px;
+      margin: 9px;
+      border-radius: 2px;
+    }
+    
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .chart-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 5px;
+    
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .year-selector {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: none;
+    padding: 8px;
+  }
+
+  .year-option {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
