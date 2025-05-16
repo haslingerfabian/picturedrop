@@ -1,20 +1,20 @@
 <div class="navbar-container">
-    <div class="navbar-left">
-      <h1 class="navbar-title">{{ title }}</h1>
-    </div>
-  
-    <div class="navbar-right">
-      <button class="icon-button" (click)="navigateTo('user')">
-        <img class="icon-placeholder" src="/user.png" alt="User-icon">
-      </button>
-      <button class="icon-button" (click)="navigateTo('workspaces')">
-        <img class="icon-placeholder" src="/folder.png" alt="Folder-icon">
-      </button>
-      <button class="icon-button" (click)="navigateTo('gutscheine')">
-        <img class="icon-placeholder" src="/tag.png" alt="Discount-icon">
-      </button>
-      <button class="icon-button" (click)="navigateTo('uploads')">
-        <img class="icon-placeholder" src="/calendar.png" alt="calendar-icon">
-      </button>
-    </div>
+  <div class="navbar-left">
+    <h1 class="navbar-title">{{ title }}</h1>
+  </div>
+
+  <div class="navbar-right">
+    <button class="icon-button" [class.active]="isActive('logout')" (click)="navigateTo('logout')">
+      <img class="icon-placeholder" src="/user.png" alt="User-icon">
+    </button>
+    <button class="icon-button" [class.active]="isActive('workspaces')" (click)="navigateTo('workspaces')">
+      <img class="icon-placeholder" src="/folder.png" alt="Folder-icon">
+    </button>
+    <button class="icon-button" [class.active]="isActive('vouchers')" (click)="navigateTo('vouchers')">
+      <img class="icon-placeholder" src="/tag.png" alt="Discount-icon">
+    </button>
+    <button class="icon-button" [class.active]="isActive('uploads')" (click)="navigateTo('uploads')">
+      <img class="icon-placeholder" src="/calendar.png" alt="calendar-icon">
+    </button>
+  </div>
 </div>

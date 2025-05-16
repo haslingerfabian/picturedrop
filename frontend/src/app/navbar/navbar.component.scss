@@ -3,37 +3,37 @@
 .navbar-container {
   display: flex;
   width: 100%;
-  height: 110px; 
+  height: 110px;
 }
 
 .navbar-left {
-  background-color: $collection-1-colors-purple-purple-100; 
+  background-color: $collection-1-colors-purple-purple-100;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   padding: 0 20px;
   width: 1200px;
 }
 
 .navbar-title {
   color: black;
-  font-size: 3rem; 
+  font-size: 3rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 10px;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .navbar-right {
   background-color: $collection-1-colors-purple-purple-200;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  padding: 15px 0; 
-  gap: 70px; 
+  justify-content: center;
+  padding: 15px 0;
+  gap: 70px;
   width: 950px;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .icon-button {
@@ -42,22 +42,52 @@
   padding: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  
-  &:hover {
+
+  &:hover,
+  &.active {  // Stile für Hover und die aktive Klasse
     .icon-placeholder {
       filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(1000%) hue-rotate(250deg);
       transform: scale(1.1);
     }
   }
-  
+
   &:active {
     transform: scale(0.95);
   }
 }
 
 .icon-placeholder {
-  width: 100px; 
+  width: 100px;
   height: 75px;
   transition: all 0.3s ease;
 }
 
+/* Media Query für Bildschirme bis 750px */
+@media (orientation: portrait) {
+  .navbar-container {
+    height: 150px;  // Erhöhte Höhe für bessere Darstellung auf Mobilgeräten
+  }
+
+  .navbar-left {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .navbar-title {
+    font-size: 2.5rem;
+    gap: 5px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    padding: 10px 0;
+    gap: 20px;
+    margin-left: 0;
+    justify-content: center; /* Icons zentral ausrichten */
+  }
+
+  .icon-placeholder {
+    width: 60px;    // Icons weiter verkleinern
+    height: 45px;
+  }
+}

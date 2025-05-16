@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100vw;
   background: $collection-1-colors-purple-purple-600;
 }
@@ -26,7 +25,7 @@
 
 .input-label {
   align-self: flex-start;
-  font-size: 40px;  // Schriftgröße erhöht
+  font-size: 40px; 
   font-weight: bold;
   color: white;
   margin-top: 20px;
@@ -65,5 +64,32 @@
 
   &:hover {
     background-color: darken(#B187F7, 10%);
+  }
+}
+
+/* Media Query für Bildschirme mit max. 650px Breite */
+@media (max-width:750px) {
+  .login-form {
+    width: 90%;      // Reduzierte Breite, damit es besser ins mobile Layout passt
+    padding: 40px 20px; // Erhöht das vertikale Padding (oben und unten)
+    min-height: 565px;  // Setzt eine Mindesthöhe, damit das Formular größer ist
+    // Weniger Padding für kleinere Displays
+  }
+
+  .input-label {
+    font-size: 28px; // Kleinere Schriftgröße, damit sie nicht zu dominant wirkt
+    margin-top: 15px;
+  }
+
+  .input-field {
+    padding: 12px;   // Leicht reduziertes Padding
+    font-size: 16px; // Kleinere Schriftgröße
+    border-radius: 30px;
+  }
+
+  .login-button {
+    width: 70%;      // Mehr Breite, damit der Button prominenter ist
+    font-size: 30px; // Angepasste Button-Schriftgröße
+    padding: 12px;
   }
 }

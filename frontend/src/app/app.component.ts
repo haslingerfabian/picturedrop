@@ -13,7 +13,7 @@ import { LogoutComponent } from "./logout/logout.component";import { WorkspaceLi
 @Component({
   selector: 'app-root',
   //RouterOutlet, OpenapiComponent, LoginComponent, SubmissionsComponent, WorkspacesComponent,
-  imports: [NavbarComponent, RouterOutlet, OpenapiComponent, LoginComponent, SubmissionsComponent, WorkspacesComponent, ChartComponent, LogoutComponent, WorkspaceListComponent],
+  imports: [NavbarComponent, RouterOutlet, OpenapiComponent, LoginComponent, SubmissionsComponent, WorkspacesComponent, ChartComponent,LogoutComponent, LogoutComponent, WorkspaceListComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

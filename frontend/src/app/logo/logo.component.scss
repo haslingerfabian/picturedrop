@@ -4,3 +4,10 @@
   width: 700px; /* Passe diesen Wert an, um das Logo noch größer zu machen */
   height: 500px;
 }
+
+@media (max-width: 650px) {
+  .logo {
+    width: 90%;  /* Bei kleinen Bildschirmen nimmt das Logo 90% der verfügbaren Breite ein */
+    height: auto;  /* Höhe passt sich proportional an */
+  }
+}
