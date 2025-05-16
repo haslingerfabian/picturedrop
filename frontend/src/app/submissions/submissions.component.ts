@@ -32,7 +32,6 @@ export class SubmissionsComponent {
     {
       this.loadWorkspaces();
       this.loadVouchers();
-      this.updateCouponCounts();
     }
 
     loadWorkspaces(): void {
@@ -50,6 +49,7 @@ export class SubmissionsComponent {
       this.vouchersService.getAllVouchers().subscribe({
         next: (data) => {
           this.vouchers = Array.isArray(data) ? data : [data];
+          this.updateCouponCounts();
         },
         error: (err) => {
           console.error('Fehler beim Laden der Vouchers:', err);

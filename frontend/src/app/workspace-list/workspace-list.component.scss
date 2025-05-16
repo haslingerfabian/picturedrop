@@ -60,10 +60,6 @@
     background-color: $collection-1-colors-red-red-500;
   }
 
-  .selected {
-    background-color: $collection-1-colors-yellow-yellow-500;; // Gelbe Farbe aus tokens.scss
-  }
-
   .upload-icon {
     width: auto;
     height: 100%; /* Passt die Höhe an die Box an */
