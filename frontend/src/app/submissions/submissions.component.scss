@@ -2,7 +2,7 @@
 
 .submissions-container {
   background-color: $collection-1-colors-purple-purple-600;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
   height: 75vh;
   border-radius: 12px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
   padding: 30px;
   justify-content: center;
@@ -37,6 +37,7 @@
 }
 
 .scrollable-list {
+  flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 100%;
@@ -61,6 +62,7 @@
 }
 
 .list-item {
+  cursor: pointer;
   background: $collection-1-colors-purple-purple-300;
   padding: 30px;
   margin-bottom: 25px;
@@ -78,4 +80,44 @@
   color: #ffffff;  /* Textfarbe */
   text-align: left;  /* Textzentrierung */
   text-transform: capitalize;
+}
+
+.list-item.selected {
+  background-color: yellow;
+}
+
+.coupon-info {
+  display: flex; /* Flexbox aktivieren */
+  justify-content: space-between; /* Elemente links und rechts ausrichten */
+  margin-top: 20px; /* Abstand zur Workspace-Liste */
+  font-size: 24px; /* Schriftgröße erhöhen */
+  color: $collection-1-colors-purple-purple-600; /* Farbe aus tokens.scss */
+  padding: 0 40px; /* Einrückung von links und rechts */
+
+
+  .unused-coupons {
+    text-align: left; /* Text linksbündig */
+  }
+
+  .used-coupons {
+    text-align: right; /* Text rechtsbündig */
+  }
+}
+
+.voucher-status-info {
+  margin-top: 20px; /* Abstand zur content-box */
+  text-align: center; /* Zentriere die Texte */
+  font-size: 24px; /* Schriftgröße erhöhen */
+  color: $collection-1-colors-purple-purple-600; /* Farbe aus tokens.scss */
+  padding: 0 40px; /* Einrückung von links und rechts */
+  display: flex; /* Flexbox aktivieren */
+  justify-content: space-between; /* Elemente links und rechts ausrichten */
+
+  .active-vouchers {
+    text-align: left; /* Text linksbündig */
+  }
+
+  .inactive-vouchers {
+    text-align: right; /* Text rechtsbündig */
+  }
 }

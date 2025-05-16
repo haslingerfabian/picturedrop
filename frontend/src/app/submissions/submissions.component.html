@@ -1,12 +1,31 @@
 <div class="submissions-container">
   <div class="content-box">
     <div class="box">
-      <app-workspace-list></app-workspace-list>
+      <app-workspace-list
+      [workspaces]="workspaces"
+      [customClass]="'submission-theme'"
+      (workspaceSelected)="selectWorkspace($event)">
+      </app-workspace-list>
+
+      <!-- Texte für Coupons -->
+      <div class="coupon-info">
+        <div class="unused-coupons">Unused Coupons: {{ unusedCouponsCount }}</div>
+        <div class="used-coupons">Used Coupons: {{ usedCouponsCount }}</div>
+      </div>
     </div>
     <div class="box right-box">
       <div class="scrollable-list">
-        <div class="list-item" *ngFor="let item of items">{{ item }}</div>
+        <div class="list-item" *ngFor="let voucher of filteredVouchers">
+          {{ voucher.VoucherCode }} - {{ voucher.VoucherPrize }}
+        </div>
       </div>
+
+      <div class="voucher-status-info">
+        <div class="active-vouchers">Active Vouchers: {{ activeVouchersCount }}</div>
+        <div class="inactive-vouchers">Inactive Vouchers: {{ inactiveVouchersCount }}</div>
+      </div>
+
+
     </div>
   </div>
 </div>

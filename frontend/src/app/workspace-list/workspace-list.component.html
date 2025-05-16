@@ -1,11 +1,22 @@
-<div class="list-box">
-  <div class="scrollable-list">
-    <div class="list-item" *ngFor="let workspace of workspaces"
-     [ngClass]="{'active': workspace.SubscriptionStatus === 'Active', 'inactive': workspace.SubscriptionStatus !== 'Active'}"
-    >
-      <span class="workspace-name">{{ workspace.Name }}</span>
-      <img class="upload-icon" src="/Upload_image.png" alt="Upload">
-      <span class="random-number">{{ 14 }}</span>
+<div [ngClass]="customClass">
+  <div class="list-box">
+    <div class="scrollable-list">
+      <div
+        class="list-item"
+        *ngFor="let workspace of workspaces"
+        [ngClass]="{
+          'selected': workspace.Id === selectedWorkspaceId,
+          'active': workspace.SubscriptionStatus === 'Active' && workspace.Id !== selectedWorkspaceId,
+          'inactive': workspace.SubscriptionStatus !== 'Active' && workspace.Id !== selectedWorkspaceId
+        }"
+        (click)="onWorkspaceClick(workspace.Id)"
+      >
+        <span class="workspace-name">{{ workspace.Name }}</span>
+        <div class="upload-container">
+          <img class="upload-icon" src="/Upload_image.png" alt="Upload">
+          <span class="random-number">{{ 14 }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
