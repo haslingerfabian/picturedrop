@@ -17,6 +17,11 @@ export class SubmissionsComponent {
     vouchers: Vouchers[] = [];
     selectedWorkspaceId: number | null = null;
     filteredVouchers: Vouchers[] = [];
+    unusedCouponsCount: number = 0;
+    usedCouponsCount: number = 0;
+
+    activeVouchersCount: number = 0;
+    inactiveVouchersCount: number = 0;
 
     constructor(
       private workspacesService: WorkspacesService,
@@ -27,6 +32,7 @@ export class SubmissionsComponent {
     {
       this.loadWorkspaces();
       this.loadVouchers();
+      this.updateCouponCounts();
     }
 
     loadWorkspaces(): void {
@@ -50,8 +56,21 @@ export class SubmissionsComponent {
         }
       });
     }
+
+    updateCouponCounts(): void {
+      this.unusedCouponsCount = this.vouchers.filter(voucher => !voucher.ValidatedOn).length;
+      this.usedCouponsCount = this.vouchers.filter(voucher => voucher.ValidatedOn).length;
+    }
+
     selectWorkspace(workspaceId: number): void {
       this.selectedWorkspaceId = workspaceId;
       this.filteredVouchers = this.vouchers.filter(voucher => voucher.WorkspaceId === workspaceId.toString());
+      this.updateVoucherStatusCounts();
+    }
+
+    updateVoucherStatusCounts(): void {
+      const workspaceVouchers = this.vouchers.filter(voucher => voucher.WorkspaceId === this.selectedWorkspaceId?.toString());
+      this.activeVouchersCount = workspaceVouchers.filter(voucher => voucher.ValidatedOn).length; // Active Vouchers
+      this.inactiveVouchersCount = workspaceVouchers.filter(voucher => !voucher.ValidatedOn).length; // Inactive Vouchers
     }
 }

@@ -60,6 +60,10 @@
     background-color: $collection-1-colors-red-red-500;
   }
 
+  .selected {
+    background-color: $collection-1-colors-yellow-yellow-500;; // Gelbe Farbe aus tokens.scss
+  }
+
   .upload-icon {
     width: auto;
     height: 100%; /* Passt die Höhe an die Box an */
@@ -135,12 +139,22 @@
     height: 100px; /* Feste Höhe für die Box */
   }
 
+  .upload-container {
+    display: flex; /* Flexbox aktivieren */
+    align-items: center; /* Vertikale Zentrierung */
+    gap: 10px; /* Abstand zwischen Bild und Zahl */
+  }
+
   .active {
     background-color: $collection-1-colors-green-green-500;
   }
 
   .inactive {
     background-color: $collection-1-colors-red-red-500;
+  }
+
+  .selected {
+    background-color: $collection-1-colors-yellow-yellow-500;; // Gelbe Farbe aus tokens.scss
   }
 
   .upload-icon {

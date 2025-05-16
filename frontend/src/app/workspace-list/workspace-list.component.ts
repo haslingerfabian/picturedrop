@@ -15,8 +15,11 @@ export class WorkspaceListComponent {
   @Input() customClass: string = ''; // Dynamische CSS-Klasse
   @Output() workspaceSelected = new EventEmitter<number>(); // Event für die Auswahl eines Workspaces
   @Input() workspaces: Workspace[] = [];
+  selectedWorkspaceId: number | null = null; // ID des ausgewählten Workspaces
+
 
   onWorkspaceClick(workspaceId: number): void {
+    this.selectedWorkspaceId = workspaceId; // Setze den ausgewählten Workspace
     this.workspaceSelected.emit(workspaceId); // Event auslösen
   }
 
